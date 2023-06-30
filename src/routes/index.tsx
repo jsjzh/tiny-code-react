@@ -6,8 +6,9 @@ import LayoutBlank from "@/pages/_layouts/Blank";
 import LayoutMain from "@/pages/_layouts/Main";
 
 const Login = lazy(() => import("@/pages/Login"));
-const Home = lazy(() => import("@/pages/Home"));
+const Jump = lazy(() => import("@/pages/Jump"));
 const Test = lazy(() => import("@/pages/Test"));
+const Suspender = lazy(() => import("@/pages/Suspender"));
 
 const NotFound = lazy(() => import("@/pages/results/NotFound"));
 const NotAuthorized = lazy(() => import("@/pages/results/NotAuthorized"));
@@ -28,24 +29,28 @@ export interface IRoute {
 
 const routes: IRoute[] = [
   {
+    hide: true,
     title: "登录",
-    path: "/",
+    path: "/login",
     element: <LayoutBlank />,
-    children: [{ title: "登录", path: "/", element: lazyLoad(<Login />) }],
-  },
-  {
-    title: "测试",
-    path: "/test",
-    element: <LayoutBlank />,
-    children: [{ title: "测试", path: "/test", element: lazyLoad(<Test />) }],
+    children: [{ title: "登录", path: "/login", element: lazyLoad(<Login />) }],
   },
   {
     title: "首页",
-    path: "/home",
+    path: "/",
     element: <LayoutMain />,
-    children: [{ title: "跳转页", path: "/home", element: lazyLoad(<Home />) }],
+    children: [
+      { title: "测试", path: "/test", element: lazyLoad(<Test />) },
+      { title: "跳转页", path: "/jump", element: lazyLoad(<Jump />) },
+      {
+        title: "suspender",
+        path: "/suspender",
+        element: lazyLoad(<Suspender />),
+      },
+    ],
   },
   {
+    hide: true,
     title: "结果页",
     path: "/results",
     element: <LayoutBlank />,
