@@ -37,13 +37,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "swr": "^2.2.2",
+    "swr": "^2.2.4",
     "use-immer": "^0.8.1",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@types/jsonp": "^0.2.1",
-    "@types/node": "^18.17.19",
+    "@types/node": "^18.18.0",
     "@types/ramda": "^0.28.25",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
